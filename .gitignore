@@ -1,2 +1,4 @@
 Thumbs.db
 *.sh
+web/*
+line/*/*.jpg
