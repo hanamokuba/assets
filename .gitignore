@@ -1,5 +1,6 @@
 Thumbs.db
 *.sh
 web/*
-line/
 details/
+line/**/*.jpg
+
