@@ -6,12 +6,15 @@ fi
 echo $@
 
 for f in $@; do
+    brno=${f%/*}
+    brno=${brno##*/}
+    if [ ${brno} == ORIG ]; then 
+        cp -v $f ${f/\//\/211\/}
+        f=${f/\//\/211\/}
+        brno=211
+    fi
     fn=${f##*/}
     fn=${fn%.jpg}
-    brno=${f#*/}
-    brno=${brno%/*}
-    # echo ${brno:1:2}
-    # continue
     if [[ $fn != ${brno:1:2}* && $fn != 88* ]]; then
         mv -v $f ${f%/*}/${brno:1:2}$fn.jpg
         f=${f%/*}/${brno:1:2}$fn.jpg
